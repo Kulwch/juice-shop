@@ -62,7 +62,7 @@ module.exports = function getUserProfile () {
             'Content-Security-Policy': CSP
           })
 
-          res.send(fn(user))
+          res.status(404).send({ message: 'User not found.' });
         }).catch((error: Error) => {
           next(error)
         })
